@@ -9,6 +9,7 @@
             "email": "info@webepower.biz"
         }
     ],
+    "minimum-stability": "dev",
     "repositories": {
       "url": "github.com/seven-webepower/sitemap.git",
       "type": "git"
