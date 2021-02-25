@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="WebePower\Sitemap\Block\CategorySitemap" name="sitemap.category" template="WebePower_Sitemap::category.phtml" ifconfig="html_sitemap/option/category" />
+            <block class="WebePower\Sitemap\Block\PageSitemap" name="sitemap.pages" template="WebePower_Sitemap::pages.phtml" ifconfig="html_sitemap/option/cms_page" />
+            <block class="WebePower\Sitemap\Block\ProductSitemap" name="sitemap.products" template="WebePower_Sitemap::products.phtml" ifconfig="html_sitemap/option/product" />
+        </referenceContainer>
+    </body>
+</page>

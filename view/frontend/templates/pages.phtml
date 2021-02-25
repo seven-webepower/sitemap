@@ -1,0 +1,23 @@
+<?php
+	$pages = $block->getPages();
+	$helper = $this->helper('WebePower\Sitemap\Helper\Data');
+	$userLinks = $helper->getUserLinks();
+	$otherLinks = $helper->getOtherLinks();
+?>
+<?php if(count($pages)>0 || count($userLinks)>0 || $otherLinks!=''):?>
+<h2 class="sitemap-title"><?php echo __('CMS Page');?></h2>
+<ul id="page-sitemap" class="sitemap-list">
+    <?php foreach ($pages as $page):?>
+        <li>
+        	<a href="<?php echo $block->getUrl($page->getIdentifier()) ?>"><?php echo $page->getTitle() ?></a>
+        </li>
+    <?php endforeach; ?>
+    <?php foreach ($userLinks as $ulink => $uname):?>
+        <li>
+        	<a href="<?php echo $block->getUrl('customer/account/'.$ulink) ?>"><?php echo $uname ?></a>
+        </li>
+    <?php endforeach; ?>
+    <?php echo $otherLinks ?>
+</ul>
+<div style="clear:left;"></div>
+<?php endif;?>

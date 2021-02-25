@@ -1,0 +1,25 @@
+{
+    "name": "webepower/module-sitemap",
+    "description": "Sitmap generate module for Magento 2",
+    "license": "proprietary",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Webepower",
+            "email": "info@webepower.biz"
+        }
+    ],
+    "repositories": {
+      "url": "github.com/seven-webepower/sitemap.git",
+      "type": "git"
+    },
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "WebePower\\Sitemap\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

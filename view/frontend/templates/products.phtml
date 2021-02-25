@@ -1,0 +1,22 @@
+<?php if(!$this->helper('WebePower\Sitemap\Helper\Data')->isCategoryProduct()):?>
+	<?php 
+		$products = $block->getSortedData();
+		$count = $block->getTotalSize();
+	?>
+	<?php if($count>0):?>
+	<h2 class="sitemap-title"><?php echo __('Product List');?><span><?php echo sprintf(__('Showing %d Products'),$count);?></span></h2>
+		<?php foreach ($products as $initial => $list):?>
+			<div class="product-list">
+				<h4 class="char-title"><span class="char"><?php echo $initial;?></span>&nbsp;&nbsp;<span class="pcount">(<?php echo count($list);?>)</span></h4>
+				<ul id="product-sitemap" class="sitemap-list">
+					<?php foreach ($list as $product):?>
+					    <li>
+				        	<a href="<?php echo $product['url'] ?>"><?php echo $product['name'] ?></a>
+				        </li>
+					<?php endforeach;?>
+				</ul>
+				<div style="clear:left;"></div>
+			</div>
+		<?php endforeach;?>
+	<?php endif;?>
+<?php endif;?>
